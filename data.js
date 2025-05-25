@@ -125,7 +125,7 @@ const certifications = [
         title: 'Linux I',
         issuer: 'Conhecendo o Terminal',
         date: '2025',
-        image: 'img/linux.jpg',
+        image: 'img/Linux.jpg',
         link: 'https://cursos.alura.com.br/certificate/111e30d8-904b-47a7-924a-2e2a42e30797'
     },
     {
