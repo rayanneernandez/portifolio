@@ -40,6 +40,7 @@ body {
     color: var(--text);
     background: var(--background);
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
 }
 
 /* Container */
@@ -442,8 +443,85 @@ body {
     }
   }
   
-    
-
+  .container {
+    max-width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .container h1 {
+    font-size: 2em;
+    min-height: 3em;
+    white-space: normal;
+    word-break: break-word;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .typing-text {
+    display: inline-block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+  }
+  
+  
+  /* Reserva espaço para o texto completo mesmo antes de digitar */
+  .container h1::after {
+    content: "Olá, sou Desenvolvedora Full Stack!!";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  /* Parágrafo e botões também responsivos */
+  .container p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .primary-btn, .secondary-btn, .download-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  /* Responsividade para telas pequenas */
+  @media screen and (max-width: 600px) {
+    .container h1 {
+      font-size: 1.5em;
+      min-height: 3.5em; /* Aumenta a altura mínima para acomodar mais texto */
+    }
+  
+    .container p {
+      font-size: 0.95em;
+    }
+  
+    .primary-btn, .secondary-btn, .download-btn {
+      width: 100%;
+      font-size: 1em;
+    }
+  
+    .buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
   
 
 /* Projects Section */
