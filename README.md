@@ -1,21 +1,53 @@
-Rayanne Ernandez — Portfólio Web
-Olá! Este é o meu portfólio pessoal, onde mostro meus projetos, minhas habilidades e um pouco sobre mim.
-Construído com HTML, CSS e JavaScript, ele é responsivo, tem modo escuro e um formulário de contato que envia mensagens direto para o meu email.
+# 🌟 Portfólio - Rayanne da Motta Ernandez
 
-O que tem aqui?
-Design clean, responsivo e fácil de navegar
+Bem-vindo(a) ao meu portfólio profissional!  
+Este projeto foi desenvolvido com o objetivo de apresentar minhas habilidades, projetos, certificações e formas de contato de maneira interativa, responsiva e multilíngue.
 
-Efeito visual suave enquanto você desce a página
+![Capa do Portfólio](./img/foto.png)
 
-Modo claro e escuro para dar aquela personalização
+---
 
-Formulário de contato funcional, com confirmação visual na tela
+## 📌 Sobre o Projeto
 
-Integração simples com Formspree para envio seguro das mensagens
+Este portfólio foi construído utilizando:
 
-Tecnologias usadas
-HTML5, CSS3 (Grid e Flexbox)
+- HTML5, CSS3 e JavaScript
+- Design responsivo para diferentes tamanhos de tela
+- Suporte a modo claro e escuro 🌙☀️
+- Internacionalização (i18n) para múltiplos idiomas 🇧🇷 🇺🇸
+- Animações suaves e ícones interativos
 
-JavaScript moderno (ES6+)
+---
 
-Formspree para o backend do formulário de contato
+## ✨ Funcionalidades
+
+✅ Layout moderno e responsivo  
+✅ Suporte ao modo escuro   
+✅ Seções de navegação fluida: Sobre, Projetos, Certificações e Contato  
+✅ Destaque visual para habilidades técnicas e experiências  
+✅ Animação rotativa personalizada ao redor da foto de perfil
+
+---
+## 💻 Acesse meu portfólio online
+
+➡️ [rayanneernandez.github.io/repositorio](https://rayanneernandez.github.io/repositorio/)
+
+---
+
+## 📬 Contato
+
+📧 Email: rayenneernandez@gmail.com  
+🔗 [LinkedIn] (https://www.linkedin.com/in/rayanne-ernandez-2a61ba221/)
+🌐 [rayanne.dev.br](https://rayanne.dev.br) 
+
+---
+
+## ⚙️ Em constante evolução...
+
+Este projeto será atualizado com novos projetos, cursos e melhorias contínuas.  
+Fique à vontade para explorar o código ou entrar em contato!
+
+---
+
+Feito com 💙 por Rayanne da Motta Ernandez.
+
