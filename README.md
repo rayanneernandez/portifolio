@@ -3,7 +3,7 @@
 Bem-vindo(a) ao meu portfólio profissional!  
 Este projeto foi desenvolvido com o objetivo de apresentar minhas habilidades, projetos, certificações e formas de contato de maneira interativa, responsiva e multilíngue.
 
-![Capa do Portfólio](./img/foto.png)
+![Capa do Portfólio](./img/capa.png)
 
 ---
 
