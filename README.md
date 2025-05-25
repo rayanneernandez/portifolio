@@ -13,7 +13,6 @@ Este portfólio foi construído utilizando:
 - HTML5, CSS3 e JavaScript
 - Design responsivo para diferentes tamanhos de tela
 - Suporte a modo claro e escuro 🌙☀️
-- Internacionalização (i18n) para múltiplos idiomas 🇧🇷 🇺🇸
 - Animações suaves e ícones interativos
 
 ---
@@ -37,7 +36,7 @@ Este portfólio foi construído utilizando:
 
 📧 Email: rayenneernandez@gmail.com  
 🔗 [LinkedIn] (https://www.linkedin.com/in/rayanne-ernandez-2a61ba221/)
-🌐 [rayanne.dev.br](https://rayanne.dev.br) 
+
 
 ---
 
