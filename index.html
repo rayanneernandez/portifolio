@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <title>Meu Portfólio | Desenvolvedor</title>
+    <meta name="description" content="Portfólio profissional com projetos, certificações e habilidades em desenvolvimento web e mobile.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <h1 class="logo"><img src="img/logo.png" alt=""></h1>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-items">
+                <button onclick="scrollToSection('inicio')" data-i18n="nav.inicio">Início</button>
+                <button onclick="scrollToSection('sobre')" data-i18n="nav.sobre">Sobre</button>
+                <button onclick="scrollToSection('projetos')" data-i18n="nav.projetos">Projetos</button>
+                <button onclick="scrollToSection('certificacoes')" data-i18n="nav.certificacoes">Certificações</button>
+                <button onclick="scrollToSection('contato')" data-i18n="nav.contato">Contato</button>
+                <button id="darkModeToggle" aria-label="Alternar modo escuro">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        <div class="blob-3"></div>
+        
+        <div class="container">
+            <h1><span class="typing-text"></span></h1>
+            <p>Bem-vindo ao meu portfólio. Aqui você encontrará meus projetos, certificações e muito mais sobre minha jornada no desenvolvimento de software.</p>
+            <div class="buttons">
+                <button onclick="scrollToSection('sobre')" class="primary-btn">Conheça-me</button>
+                <button onclick="scrollToSection('contato')" class="secondary-btn">Entrar em Contato</button>
+                <a href="img/Rayanne da Motta Ernandez - Currículo .pdf" download class="download-btn">📄 Baixar Currículo</a>
+            </div>
+          </div>
+          
+        
+        <button onclick="scrollToSection('sobre')" class="scroll-down" aria-label="Rolar para baixo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <p class="section-desc">Conheça um pouco mais sobre minha trajetória, habilidades e interesses.</p>
+            
+            <div class="about-grid">
+                <div class="profile-container">
+                    <div class="profile-image">
+                        <img src="img/foto.png" alt="Perfil">
+                    </div>
+                    <div class="profile-info">
+                        <h3>Rayanne Ernandez</h3>
+                        <p>Desenvolvedora Full Stack</p>
+                        <div class="location">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Rio de Janeiro, Brasil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-container">
+                    <h3>Minha Trajetória</h3>
+                    <p>Sou uma desenvolvedora apaixonada por criar soluções inovadoras e funcionais. Comecei minha jornada de estudos na área há 2 anos, e desde então venho me dedicando a aprimorar minhas habilidades em desenvolvimento web,mobile dentre outras.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Formação</h4>
+                                <p>4º período - Análise e desenvolvimento de sistemas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Experiência</h4>
+                                <p>2 anos em aprendizado</p>
+                            </div>
+                        </div>
+                    </div>
+                    <section id="skills" class="skills-section">
+                        <div class="container">
+                          <h3>🚀 Minhas Habilidades</h3>
+                          <div class="skills-grid">
+                            <div class="skill-item">
+                              <i class="devicon-javascript-plain colored"></i>
+                              <span>JavaScript</span>
+                            </div>
+                      
+                            <div class="skill-item">
+                              <i class="devicon-ionic-original colored"></i>
+                              <span>Ionic</span>
+                            </div>
+                      
+                            <div class="skill-item">
+                              <i class="devicon-react-original colored"></i>
+                              <span>React</span>
+                            </div>
+                      
+                            <div class="skill-item">
+                              <i class="devicon-php-plain colored"></i>
+                              <span>PHP</span>
+                            </div>
+                      
+                            <div class="skill-item">
+                              <i class="devicon-typescript-plain colored"></i>
+                              <span>TypeScript</span>
+                            </div>
+                      
+                            <div class="skill-item">
+                              <i class="devicon-python-plain colored"></i>
+                              <span>Python</span>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="projects">
+        <div class="container">
+            <h2>Meus Projetos</h2>
+            <p class="section-desc">Conheça alguns dos meus trabalhos mais recentes em desenvolvimento mobile, projetos acadêmicos e pessoais.</p>
+            
+            <div class="filters">
+                <div class="category-filters">
+                    <button class="active" data-category="todos">Todos</button>
+                    <button data-category="mobile">Mobile</button>
+                    <button data-category="academico">Acadêmico</button>
+                    <button data-category="web">Web</button>
+                </div>
+                
+                <div class="language-filters">
+                    <p>Filtrar por linguagem:</p>
+                    <div id="languageButtons"></div>
+                </div>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid"></div>
+        </div>
+    </section>
+
+    <section id="certificacoes" class="certifications">
+        <div class="container">
+            <h2>Certificações</h2>
+            <p class="section-desc">Minhas qualificações e certificados nas áreas de tecnologia e desenvolvimento.</p>
+            
+            <div class="certifications-grid" id="certificationsGrid"></div>
+        </div>
+    </section>
+
+    <section class="experience-section container">
+        <h2 class="section-title">💼 Experiência Profissional</h2>
+      
+        <div class="experience-item fade-in">
+          <h3>GLOBALTERA – Suporte de TI</h3>
+          <span class="periodo">Abril 2024 – Atual</span>
+          <ul>
+            <li>Gerenciamento de solicitações de melhorias e correção de erros do sistema</li>
+            <li>Análise de resultados do suporte</li>
+            <li>Atendimento e resolução de problemas (hardware, software e sistema – N1, N2)</li>
+            <li>Desenvolvimento de planilhas e dashboards</li>
+            <li>Gerenciamento das manutenções realizadas</li>
+          </ul>
+        </div>
+      
+        <div class="experience-item fade-in delay">
+          <h3>ELEVADORES ALPHA – Auxiliar de Escritório</h3>
+          <span class="periodo">Dez 2021 – Abril 2024</span>
+          <ul>
+            <li>Homologação de equipamentos junto à prefeitura (GEM – Rio Luz)</li>
+            <li>Cobrança e negociação com clientes inadimplentes</li>
+            <li>Atendimento ao cliente e envio de propostas</li>
+            <li>Atualização de banco de dados</li>
+          </ul>
+        </div>
+      </section>
+      
+
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p class="section-desc">Tem um projeto em mente ou quer conversar sobre oportunidades? Ficarei feliz em responder!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="rayanneernandez@gmail.com">rayanneernandez@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Telefone</h4>
+                                <a href="tel:+5521989191499">+55 (21) 98919-1499</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Localização</h4>
+                                <p>Rio de Janeiro, RJ - Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Redes Sociais</h4>
+                        <div class="social-icons">
+                            <a href="https://github.com/rayanneernandez" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rayanne-ernandez-2a61ba221/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://formspree.io/f/mrbqwkdg" method="POST" id="contactForm">
+                    <div id="formMessage" style="display:none;"></div>
+
+                    <div class="form-grid">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+                      </div>
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="subject">Assunto</label>
+                      <input type="text" id="subject" name="subject" placeholder="Como posso ajudar?">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="message">Mensagem</label>
+                      <textarea id="message" name="message" rows="6" required placeholder="Descreva seu projeto ou sua mensagem..."></textarea>
+                    </div>
+                  
+                    <button type="submit" class="submit-btn">
+                      Enviar Mensagem
+                    </button>
+                  </form>
+                  
+            </div>
+        </div>
+    </section>
+
+        <!-- Botão Flutuante -->
+        <div id="chat-toggle" onclick="toggleChat()">
+            💬
+        </div>
+        
+        <!-- Caixa de Mensagem -->
+        <div id="chat-container">
+            <div id="chat-header">Fale comigo</div>
+            <input type="text" id="whats-msg" placeholder="Escreva sua mensagem..." />
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h2>Meu Portfólio</h2>
+                    <p>Desenvolvedora apaixonada por criar soluções inovadoras e criativas. Sempre em busca de novos desafios e aprendizados.</p>
+                    <p class="copyright">&copy; <span id="currentYear"></span> Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#certificacoes">Certificações</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>Rio de Janeiro, RJ - Brasil</li>
+                        <li><a href="rayanneernandez@gmail.com">rayanneernandez@gmail.com</a></li>
+                        <li><a href="tel:+5521989191499">+55 (21) 98919-1499</a></li>
+                    </ul>
+                    
+                    <div class="social-icons">
+                        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="rayanneernandez@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/rayanneernandez" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>
+                    Obrigado (a) por chegar até aqui! 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    Espero ter me conhecido um pouquinho mais.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
