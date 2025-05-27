@@ -1196,32 +1196,49 @@ body {
     display: flex;
     flex-wrap: nowrap;
     gap: 2rem;
-    justify-content: center;
+    justify-content: flex-start; /* Alinha à esquerda para iniciar a rolagem */
     flex-direction: row;
-    overflow-x: auto; /* Adiciona rolagem horizontal se faltar espaço */
+    overflow-x: auto; /* Rolagem horizontal */
     padding-bottom: 1rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Suporte suave em iOS */
   }
   
+  .skills-grid::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem no Chrome/Safari */
+  }
   
   .skill-item {
-    width: 100px;
+    flex: 0 0 auto;
+    width: 80px; /* menor que os 100px anteriores */
+    height: 100px; /* define uma altura para padronizar */
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
     transition: transform 0.3s;
   }
   
   .skill-item i {
-    font-size: 48px;
-    margin-bottom: 8px;
-    /* Mantém a cor original definida no HTML ou em outro lugar */
+    font-size: 36px; /* ícone menor */
+    margin-bottom: 6px;
   }
   
   .skill-item span {
+    font-size: 12px; /* texto menor */
     font-weight: 500;
-    color: #222; /* Texto preto no claro */
+    color: #222;
+    text-align: center;
     transition: color 0.3s;
   }
+  
+  html.dark .skill-item span {
+    color: #fff;
+  }
+  
+  
   
   html.dark .skill-item span {
     color: #fff; /* Texto branco no escuro */
