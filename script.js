@@ -274,19 +274,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const element = document.querySelector(".typing-text");
-    const text = "Olá, sou Desenvolvedora Full Stack!!";
+    const text = "Olá, sou Rayanne Ernandez<br>Desenvolvedora Full Stack!!";
     let index = 0;
-  
+
     function type() {
-      if (index < text.length) {
-        element.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(type, 100); // velocidade da digitação
-      }
+        if (index <= text.length) {
+            element.innerHTML = text.slice(0, index); // permite <br>
+            index++;
+            setTimeout(type, 50);
+        }
     }
-  
+
     type();
-  });
+});
+
   
   function toggleChat() {
     const chat = document.getElementById("chat-container");

@@ -9,7 +9,6 @@
     --background-alt: #f8fafc;
     --border: #e2e8f0;
     --shadow: rgba(0, 0, 0, 0.1);
-
 }
 
 .dark {
@@ -58,7 +57,9 @@ body {
     right: 0;
     z-index: 1000;
     background: var(--background);
-    transition: all 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    height: 60px;
+    box-shadow: none;
 }
 
 #navbar.scrolled {
@@ -70,15 +71,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 100%;
 }
 
+/* Logo alinhada à esquerda */
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     color: var(--primary);
+    display: flex;
+    align-items: center;
+    margin-top: 8px; /* << troca feita aqui */
 }
 
+
+
+/* Navegação */
 .nav-items {
     display: flex;
     gap: 2rem;
@@ -98,6 +106,7 @@ body {
     color: var(--primary);
 }
 
+/* Botão mobile */
 .mobile-menu-btn {
     display: none;
     background: none;
