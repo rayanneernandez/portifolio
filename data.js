@@ -22,7 +22,7 @@ const projects = [
         id: 3,
         title: 'Site - Rede de Hoteis',
         description: 'Site de divulgação dos hoteis, quartos e serviços desta rede.',
-        image: 'img/redehoteis.png',
+        image: 'img/redehoteis.PNG',
         category: 'academico',
         languages: ['JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/hotel',
