@@ -1396,3 +1396,25 @@ body {
     transform: translateY(0);
   }
   
+  .contact form .form-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact form .form-group input,
+.contact form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #121e2a;
+  color: #fff;
+}
+.contact-info .social-icons {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 20px; /* Espaço entre os ícones */
+  margin-top: 10px;
+}

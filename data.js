@@ -22,11 +22,11 @@ const projects = [
         id: 3,
         title: 'Site - Rede de Hoteis',
         description: 'Site de divulgação dos hoteis, quartos e serviços desta rede.',
-        image: 'img/redehoteis.PNG',
+        image: 'img/redehoteis.png',
         category: 'academico',
         languages: ['JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/hotel',
-        link: 'https://rayanneernandez.github.io/hotel/'
+        link: 'https://rayanneernandez.github.io/hotel-green-garden/'
     },
     {
         id: 4,
@@ -77,8 +77,31 @@ const projects = [
         github: 'https://github.com/rayanneernandez/organizador-de-agenda',
         link: 'https://rayanneernandez.github.io/organizador-de-agenda/'
     },
-    {
+       {
         id: 9,
+        title: 'Site de elevador',
+        description: 'Modelo de site moderno e responsivo para empresa especializada em soluções completas para elevadores.',
+        image: 'img/modelo1-elevador.png',
+        category: 'freelancer',
+        languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
+        github: 'https://github.com/rayanneernandez/visiontech',
+        link: 'https://rayanneernandez.github.io/visiontech/'
+    },
+
+           {
+        id: 9,
+        title: 'Novo modelo Site de elevador',
+        description: 'Modelo de site moderno e responsivo para empresa especializada em soluções completas para elevadores.',
+        image: 'img/modelo2-elevador.png',
+        category: 'web',
+        languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
+        github: 'https://github.com/rayanneernandez/visiontechelevadores',
+        link: 'https://rayanneernandez.github.io/visiontechelevadores/'
+    },
+
+
+    {
+        id: 10,
         title: 'Aguarde... Novo Projeto em Desenvolvimento',
         description: 'Este espaço será ocupado por um projeto que promete surpreender. Fique atento!',
         image: 'img/embreve.jpg',
