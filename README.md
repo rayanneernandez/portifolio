@@ -47,5 +47,5 @@ Fique à vontade para explorar o código ou entrar em contato!
 
 ---
 
-Feito com 💙 por Rayanne da Motta Ernandez.
+
 
