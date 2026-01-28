@@ -54,7 +54,7 @@
             <div class="buttons">
                 <button onclick="scrollToSection('sobre')" class="primary-btn">Conheça-me</button>
                 <button onclick="scrollToSection('contato')" class="secondary-btn">Entrar em Contato</button>
-                <a href="img/Curriculo - Rayanne da Motta Ernandez.pdf" download class="download-btn">📄 Baixar Currículo</a>
+                <a href="img/Curriculo - Rayanne da Motta Ernandez.pdf" download target="_blank" rel="noopener noreferrer" class="download-btn">📄 Baixar Currículo</a>
             </div>
           </div>
           
@@ -116,7 +116,7 @@
                             </div>
                             <div>
                                 <h4>Experiência</h4>
-                                <p>2 anos em aprendizado</p>
+                                <p>3 anos em aprendizado</p>
                             </div>
                         </div>
                     </div>
@@ -210,27 +210,98 @@
     <section class="experience-section container">
         <h2 class="section-title">💼 Experiência Profissional</h2>
       
-        <div class="experience-item fade-in">
-          <h3>GLOBALTERA – Suporte de TI</h3>
-          <span class="periodo">Abril 2024 – Atual</span>
-          <ul>
-            <li>Gerenciamento de solicitações de melhorias e correção de erros do sistema</li>
-            <li>Análise de resultados do suporte</li>
-            <li>Atendimento e resolução de problemas (hardware, software e sistema – N1, N2)</li>
-            <li>Desenvolvimento de planilhas e dashboards</li>
-            <li>Gerenciamento das manutenções realizadas</li>
-          </ul>
-        </div>
+        <div class="experience-list">
+            
+            <!-- GTholding (Grupo de Experiência) -->
+            <div class="company-block fade-in">
+                <div class="company-header">
+                    <!-- Ícone da empresa (placeholder ou SVG genérico) -->
+                    <div class="company-logo-placeholder">GT</div>
+                    <div class="company-info">
+                        <h3>GTholding</h3>
+                        <span class="total-duration">Tempo total: 1 ano e 6 meses</span>
+                    </div>
+                </div>
+
+                <div class="role-timeline">
+                    <!-- Role 1: Assistente -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Assistente de desenvolvimento</h4>
+                            <span class="period">set de 2025 - o momento</span>
+                            <span class="location">Barra da Tijuca, RJ</span>
+                            <ul>
+                                <li>Desenvolvimento de Software e Web;</li>
+                                <li>Desenvolvimento de Aplicativos;</li>
+                                <li>Desenvolvimento de dashboard para análise de dados;</li>
+                                <li>Desenvolvimento IA para análise de dados e reconhecimento facial.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Role 2: Técnico -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Técnico de suporte em TI</h4>
+                            <span class="period">fev de 2025 - set de 2025</span>
+                            <span class="location">Barra da Tijuca, RJ</span>
+                            <ul>
+                                <li>Atendimento via chats/ligações;</li>
+                                <li>Suporte de sistema WebPosto;</li>
+                                <li>Correção de erros através de banco de dados;</li>
+                                <li>Realização de dashboards de análise da equipe de suporte;</li>
+                                <li>Acompanhamento de melhorias do sistema;</li>
+                                <li>Controle de manutenção de equipamentos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Role 3: Estágio -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Suporte de TI - Estágio</h4>
+                            <span class="period">abr de 2024 - fev de 2025</span>
+                            <span class="location">Barra da Tijuca, RJ</span>
+                            <ul>
+                                <li>Atendimento via chats/ ligações;</li>
+                                <li>Suporte de sistema WebPosto;</li>
+                                <li>Correção de erros através de banco de dados.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
       
-        <div class="experience-item fade-in delay">
-          <h3>ELEVADORES ALPHA – Auxiliar de Escritório</h3>
-          <span class="periodo">Dez 2021 – Abril 2024</span>
-          <ul>
-            <li>Homologação de equipamentos junto à prefeitura (GEM – Rio Luz)</li>
-            <li>Cobrança e negociação com clientes inadimplentes</li>
-            <li>Atendimento ao cliente e envio de propostas</li>
-            <li>Atualização de banco de dados</li>
-          </ul>
+            <!-- Elevadores Alpha -->
+            <div class="company-block fade-in delay-2">
+                <div class="company-header">
+                    <div class="company-logo-placeholder">EA</div>
+                    <div class="company-info">
+                        <h3>ELEVADORES ALPHA</h3>
+                        <span class="total-duration">2 anos e 5 meses</span>
+                    </div>
+                </div>
+
+                <div class="role-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Auxiliar de Escritório</h4>
+                            <span class="period">Dez 2021 – Abril 2024</span>
+                            <ul>
+                                <li>Homologação de equipamentos junto à prefeitura (GEM – Rio Luz)</li>
+                                <li>Cobrança e negociação com clientes inadimplentes</li>
+                                <li>Atendimento ao cliente e envio de propostas</li>
+                                <li>Atualização de banco de dados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
       </section>
       
@@ -375,21 +446,16 @@
                     </ul>
                     
                     <div class="social-icons">
-                        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <a href="https://github.com/rayanneernandez" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                             </svg>
                         </a>
-                        <a href="rayanneernandez@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/rayanne-ernandez-2a61ba221/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                                 <rect x="2" y="9" width="4" height="12"></rect>
                                 <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                        <a href="https://github.com/rayanneernandez" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                             </svg>
                         </a>
                     </div>
@@ -398,10 +464,7 @@
             
             <div class="footer-bottom">
                 <p>
-                    Obrigado (a) por chegar até aqui! 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
+                    Obrigado (a) por chegar até aqui!!!
                     Espero ter me conhecido um pouquinho mais.
                 </p>
             </div>

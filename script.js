@@ -62,6 +62,7 @@ function createProjectCard(project) {
                                               project.category === 'academico' ? 'Acadêmico' : 'web'}</div>
             </div>
             <div class="project-content">
+                <div class="project-date" style="color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.25rem;">${project.date || ''}</div>
                 <h3 class="project-title">${project.title}</h3>
                 <p class="project-description">${project.description}</p>
                 <div class="project-tags">

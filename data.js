@@ -1,5 +1,16 @@
 const projects = [
     {
+        id: 100,
+        title: 'Serralheria Irmãos Teixeira',
+        description: 'Site institucional da Serralheria Irmãos Teixeira, desenvolvido para apresentar serviços de serralheria, portões, grades, estruturas metálicas e projetos sob medida. Inclui informações sobre a empresa, portfólio, formas de contato e solicitação de orçamentos.',
+        image: 'img/irmaosteixeira.jpeg',
+        category: 'web',
+        languages: ['TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'React'],
+        github: 'https://github.com/rayanneernandez/serralheiriairmaosteixeira',
+        link: 'https://www.irmaosteixeira.com/',
+        date: 'Jan 2025'
+    },
+    {
         id: 1,
         title: 'Controle de Solicitações',
         description: 'Este projeto foi desenvolvido para facilitar o gerenciamento e organização de solicitações de melhorias em sistemas corporativos. Com ele, você pode substituir planilhas manuais por uma solução mais eficiente e centralizada, permitindo um controle mais estruturado e ágil dos pedidos.',
@@ -7,7 +18,8 @@ const projects = [
         category: 'web',
         languages: ['HTML', 'CSS', 'JavaScript'],
         github: 'https://github.com/rayanneernandez/controle-de-solicitacoes',
-        link: 'https://rayanneernandez.github.io/controle-de-solicitacoes/painel.html'
+        link: 'https://rayanneernandez.github.io/controle-de-solicitacoes/painel.html',
+        date: '2024'
     },
     {
         id: 2,
@@ -16,7 +28,8 @@ const projects = [
         image: 'img/elemental.jpg',
         category: 'mobile',
         languages: ['Ionic','TypeScript','JavaScript'],
-        github: 'https://github.com/rayanneernandez/elementalapp'
+        github: 'https://github.com/rayanneernandez/elementalapp',
+        date: '2024'
     },
     {
         id: 3,
@@ -26,7 +39,8 @@ const projects = [
         category: 'academico',
         languages: ['JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/hotel',
-        link: 'https://rayanneernandez.github.io/hotel-green-garden/'
+        link: 'https://rayanneernandez.github.io/hotel-green-garden/',
+        date: '2023'
     },
     {
         id: 4,
@@ -36,7 +50,8 @@ const projects = [
         category: 'academico',
         languages: ['JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/gerenciamento-hotel-interno',
-        link: 'https://rayanneernandez.github.io/gerenciamento-hotel-interno/'
+        link: 'https://rayanneernandez.github.io/gerenciamento-hotel-interno/',
+        date: '2023'
     },
     {
         id: 5,
@@ -46,6 +61,7 @@ const projects = [
         category: 'web',
         languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/gerenciamento-hotel-interno',
+        date: '2024'
     },
     {
         id: 6,
@@ -55,7 +71,8 @@ const projects = [
         category: 'mobile',
         languages: ['TypeScript', 'Tailwind'],
         github: 'https://github.com/rayanneernandez/controleestoque',
-        link: 'https://rayanneernandez.github.io/controleestoque/'
+        link: 'https://rayanneernandez.github.io/controleestoque/',
+        date: '2024'
     },
     {
         id: 7,
@@ -65,7 +82,8 @@ const projects = [
         category: 'pessoal',
         languages: ['python', 'HTML', 'CSS', 'TypeScript', 'JavaScipt'],
         github: 'https://github.com/rayanneernandez/gerenciamento-hotel-interno',
-        link: 'https://tubular-cactus-cd43f0.netlify.app/'
+        link: 'https://tubular-cactus-cd43f0.netlify.app/',
+        date: '2024'
     },
     {
         id: 8,
@@ -75,9 +93,10 @@ const projects = [
         category: 'web',
         languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/organizador-de-agenda',
-        link: 'https://rayanneernandez.github.io/organizador-de-agenda/'
+        link: 'https://rayanneernandez.github.io/organizador-de-agenda/',
+        date: '2024'
     },
-       {
+    {
         id: 9,
         title: 'Site de elevador',
         description: 'Modelo de site moderno e responsivo para empresa especializada em soluções completas para elevadores.',
@@ -85,28 +104,28 @@ const projects = [
         category: 'freelancer',
         languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/visiontech',
-        link: 'https://rayanneernandez.github.io/visiontech/'
+        link: 'https://rayanneernandez.github.io/visiontech/',
+        date: '2024'
     },
-
-           {
-        id: 9,
+    {
+        id: 11,
         title: 'Novo modelo Site de elevador',
         description: 'Modelo de site moderno e responsivo para empresa especializada em soluções completas para elevadores.',
         image: 'img/modelo2-elevador.png',
         category: 'web',
         languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/visiontechelevadores',
-        link: 'https://rayanneernandez.github.io/visiontechelevadores/'
+        link: 'https://rayanneernandez.github.io/visiontechelevadores/',
+        date: '2024'
     },
-
-
     {
         id: 10,
         title: 'Aguarde... Novo Projeto em Desenvolvimento',
         description: 'Este espaço será ocupado por um projeto que promete surpreender. Fique atento!',
         image: 'img/embreve.jpg',
         category: 'web',
-        languages: ['HTML', 'TypeScript', 'Tailwind', 'CSS']
+        languages: ['HTML', 'TypeScript', 'Tailwind', 'CSS'],
+        date: '2025'
     }
 ];
 

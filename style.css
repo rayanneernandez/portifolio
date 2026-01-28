@@ -369,13 +369,18 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* mais flexível */
     gap: 1.5rem;
     margin: 2rem 0;
+    justify-items: center; /* Centraliza os itens dentro do grid */
 }
 
 .info-item {
     display: flex;
-    gap: 1rem;
-    align-items: flex-start; /* melhor alinhamento vertical */
-    flex-wrap: wrap;          /* permitir que quebre linha se precisar */
+    gap: 0.5rem;
+    align-items: flex-start; /* Alinha ao topo */
+}
+
+.info-item > div {
+    text-align: left;
+    margin-top: 0.25rem; /* Ajuste fino para alinhar o título com o ícone */
 }
 
 .icon {
@@ -428,8 +433,7 @@ body {
     }
   
     .info-item {
-      flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 0.5rem;
       width: 100%;
     }
@@ -780,6 +784,11 @@ body {
 
 .info-item h4 {
     margin-bottom: 0.25rem;
+}
+
+.info-item p {
+    padding: 0; /* Remove padding lateral herdado de .container p */
+    margin: 0;
 }
 
 .info-item a {
@@ -1316,49 +1325,181 @@ body {
 
   /* Experiência Profissional */
 .experience-section {
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .section-title {
     font-size: 2rem;
     color: var(--primary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
-.experience-item {
-    background: var(--background-alt);
-    border-left: 4px solid var(--primary);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px var(--shadow);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.6s ease forwards;
+.experience-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    align-items: stretch;
 }
 
-.experience-item.delay {
+@media (max-width: 900px) {
+    .experience-list {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+}
+
+.company-block {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    background: var(--background-alt);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.company-block:last-child {
+    /* Remover reset anterior */
+}
+
+.company-block.delay-2 {
     animation-delay: 0.2s;
 }
 
-.experience-item h3 {
-    margin: 0 0 0.3rem;
-    color: var(--primary-dark);
-    font-size: 1.3rem;
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem; /* Reduzido de 1rem */
 }
 
-.experience-item .periodo {
-    font-size: 0.95rem;
+.company-logo-placeholder {
+    width: 48px;
+    height: 48px;
+    background-color: var(--background-alt);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 4px; /* Quadrado arredondado estilo LinkedIn */
+}
+
+.company-info h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text);
+}
+
+.company-info .total-duration {
+    font-size: 0.9rem;
     color: var(--text-light);
-    margin-bottom: 1rem;
-    display: block;
 }
 
-.experience-item ul {
+.role-timeline {
+    position: relative;
+    padding-left: 24px; /* Espaço para a linha */
+    margin-left: 24px; /* Metade da logo (48/2) */
+    border-left: 2px solid var(--border);
+}
+
+/* Remover a linha se tiver apenas um item ou para o último item?
+   No LinkedIn a linha conecta os itens. Se for o último, a linha para na bolinha.
+   Mas CSS puro é chato pra fazer parar exatamente. Vamos deixar a linha contínua 
+   e usar background para esconder ou pseudo-elementos. 
+   Simplificação: Linha contínua à esquerda de todo o bloco role-timeline.
+*/
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 0.75rem; /* Reduzido de 1.5rem */
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -31px; /* -24px padding + -2px border + ajuste para centralizar (dot width/2) */
+    top: 5px; /* Ajuste vertical */
+    width: 12px;
+    height: 12px;
+    background-color: var(--border); /* Cinza padrão */
+    border-radius: 50%;
+    border: 2px solid var(--background); /* Borda para separar da linha se sobrepor */
+    z-index: 1;
+}
+
+.timeline-item:first-child .timeline-dot {
+    background-color: var(--primary); /* Destaque para o atual/primeiro */
+}
+
+.timeline-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.15rem 0;
+}
+
+.timeline-content .period {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.15rem;
+}
+
+.timeline-content .location {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem; /* Reduzido de 0.5rem */
+}
+
+.timeline-content ul {
     list-style: disc;
     padding-left: 1.5rem;
+    margin-top: 0.25rem; /* Reduzido de 0.5rem */
     color: var(--text);
+}
+
+.timeline-content ul li {
+    margin-bottom: 0.15rem; /* Reduzido de 0.5rem */
+    line-height: 1.3; /* Reduzido de 1.5 */
+}
+
+@media (max-width: 768px) {
+    .role-timeline {
+        margin-left: 15px; /* Ajuste mobile */
+        padding-left: 20px;
+    }
+    
+    .timeline-dot {
+        left: -27px;
+    }
+}
+
+@media (max-width: 768px) {
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .exp-meta {
+        text-align: left;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+    }
 }
 
 @keyframes fadeInUp {
@@ -1366,22 +1507,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.experience-item {
-    background: var(--background-alt);
-    padding: 1.5rem;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
-    transform: scale(1); /* base */
-}
-
-.experience-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 24px var(--shadow);
 }
 
 
