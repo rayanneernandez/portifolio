@@ -8,7 +8,7 @@ const projects = [
         languages: ['TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'React'],
         github: 'https://github.com/rayanneernandez/serralheiriairmaosteixeira',
         link: 'https://www.irmaosteixeira.com/',
-        date: 'Jan 2025'
+        date: 'Jun 2025'
     },
     {
         id: 1,
@@ -29,7 +29,7 @@ const projects = [
         category: 'mobile',
         languages: ['Ionic','TypeScript','JavaScript'],
         github: 'https://github.com/rayanneernandez/elementalapp',
-        date: '2024'
+        date: 'jul 2025'
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ const projects = [
         languages: ['JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/hotel',
         link: 'https://rayanneernandez.github.io/hotel-green-garden/',
-        date: '2023'
+        date: 'abr 2025'
     },
     {
         id: 4,
@@ -51,7 +51,7 @@ const projects = [
         languages: ['JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/gerenciamento-hotel-interno',
         link: 'https://rayanneernandez.github.io/gerenciamento-hotel-interno/',
-        date: '2023'
+        date: 'abr 2025'
     },
     {
         id: 5,
@@ -61,7 +61,7 @@ const projects = [
         category: 'web',
         languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/gerenciamento-hotel-interno',
-        date: '2024'
+        date: 'ago 2025'
     },
     {
         id: 6,
@@ -72,7 +72,7 @@ const projects = [
         languages: ['TypeScript', 'Tailwind'],
         github: 'https://github.com/rayanneernandez/controleestoque',
         link: 'https://rayanneernandez.github.io/controleestoque/',
-        date: '2024'
+        date: 'fev 2025'
     },
     {
         id: 7,
@@ -83,7 +83,7 @@ const projects = [
         languages: ['python', 'HTML', 'CSS', 'TypeScript', 'JavaScipt'],
         github: 'https://github.com/rayanneernandez/gerenciamento-hotel-interno',
         link: 'https://tubular-cactus-cd43f0.netlify.app/',
-        date: '2024'
+        date: 'fev 2024'
     },
     {
         id: 8,
@@ -94,7 +94,7 @@ const projects = [
         languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/organizador-de-agenda',
         link: 'https://rayanneernandez.github.io/organizador-de-agenda/',
-        date: '2024'
+        date: 'set 2025'
     },
     {
         id: 9,
@@ -105,7 +105,7 @@ const projects = [
         languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/visiontech',
         link: 'https://rayanneernandez.github.io/visiontech/',
-        date: '2024'
+        date: 'ago 2025'
     },
     {
         id: 11,
@@ -116,7 +116,7 @@ const projects = [
         languages: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
         github: 'https://github.com/rayanneernandez/visiontechelevadores',
         link: 'https://rayanneernandez.github.io/visiontechelevadores/',
-        date: '2024'
+        date: 'ago 2025'
     },
     {
         id: 10,
@@ -125,7 +125,7 @@ const projects = [
         image: 'img/embreve.jpg',
         category: 'web',
         languages: ['HTML', 'TypeScript', 'Tailwind', 'CSS'],
-        date: '2025'
+        date: '2026'
     }
 ];
 
