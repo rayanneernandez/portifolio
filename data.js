@@ -8,7 +8,7 @@ const projects = [
         languages: ['TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'React'],
         github: 'https://github.com/rayanneernandez/serralheiriairmaosteixeira',
         link: 'https://www.irmaosteixeira.com/',
-        date: 'Jun 2025'
+        date: 'set 2025'
     },
     {
         id: 1,
@@ -126,6 +126,56 @@ const projects = [
         category: 'web',
         languages: ['HTML', 'TypeScript', 'Tailwind', 'CSS'],
         date: '2026'
+    },
+    {
+        id: 13,
+        title: 'Global IA - Base de Conhecimento',
+        description: 'Base de Conhecimento para aprender e dominar a Global IA, com acesso a vídeos e guias passo a passo para aproveitar ao máximo a plataforma.',
+        image: 'img/base-conhecimento.png',
+        category: 'web',
+        languages: ['TypeScript'],
+        link: 'https://globalia-base-conhecimento.vercel.app/',
+        date: '2025'
+    },
+    {
+        id: 14,
+        title: 'Vitalongis - Site Institucional',
+        description: 'Site instituicional e facilitar o acesso a cuidadores de qualidade para pessoas idosas, conectando famílias a profissionais qualificados e comprometidos, garantindo bem-estar, segurança e dignidade em cada momento da jornada do envelhecimento.',
+        image: 'img/vitalongis.png',
+        category: 'web',
+        languages: ['TypeScript', 'React', 'Vite', 'HTML5', 'CSS3'],
+        github: 'https://github.com/rayanneernandez/vitalongis/',
+        link: 'https://rayanneernandez.github.io/vitalongis/',
+        date: '2025'
+    },
+    {
+        id: 15,
+        title: 'VerySing - Assinador de Contratos',
+        description: 'Uma solução moderna, segura e eficiente para assinatura digital de documentos. Permite upload de contratos, assinatura manuscrita com canvas, envio de comunicados e formulários por e‑mail, suporte multi-idioma (PT/EN/ES) e interface glassmorphism, com criptografia de ponta a ponta.',
+        image: 'img/verysing.png',
+        category: 'web',
+        languages: ['TypeScript', 'Python', 'CSS', 'JavaScript'],
+        github: 'https://github.com/rayanneernandez/verysing',
+        link: 'https://verysing.vercel.app/',
+        date: '2026'
+    },
+    {
+        id: 12,
+        title: 'Atadiesel - Loja Autônoma (Mobile)',
+        description: 'Aplicativo mobile com login , catálogo de produtos, detalhes de produto e acesso à loja autônoma via QR Code integrações com o sistema totvs e um sistema próprio web, juntamente a uma IA que reconhece qual produto a pessoa pega assim deixando de forma totalmente autônoma a cobrança.',
+        image: 'img/login.png',
+        category: 'mobile',
+        languages: ['TypeScript'],
+        github: 'https://github.com/Caua-coder/atadiesel-main',
+        gallery: [
+            'img/login.png',
+            'img/home.png',
+            'img/produtos.png',
+            'img/detalhes.png',
+            'img/autonoma.png',
+            'img/cartoes.png'
+        ],
+        date: '2026'
     }
 ];
 
@@ -190,7 +240,7 @@ const certifications = [
         id: 8,
         title: 'Análise de Dados com Python',
         issuer: 'Análise de dados com Python - Cursando',
-        date: '2025',
+        date: '2026',
         image: 'img/embreve.png',
         link: ''
     }

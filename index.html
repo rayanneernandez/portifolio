@@ -78,7 +78,7 @@
                     </div>
                     <div class="profile-info">
                         <h3>Rayanne Ernandez</h3>
-                        <p>Desenvolvedora Full Stack</p>
+                        <p>Desenvolvedora Full Stack e IA</p>
                         <div class="location">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -91,7 +91,7 @@
 
                 <div class="info-container">
                     <h3>Minha Trajetória</h3>
-                    <p>Sou uma desenvolvedora apaixonada por criar soluções inovadoras e funcionais. Comecei minha jornada de estudos na área há 2 anos, e desde então venho me dedicando a aprimorar minhas habilidades em desenvolvimento web,mobile dentre outras.</p>
+                    <p>Sou uma desenvolvedora apaixonada por criar soluções inovadoras e funcionais. Comecei meus estudos na área há 3 anos, e desde então venho me dedicando a aprimorar minhas habilidades em desenvolvimento web, mobile dentre outras.</p>
                     
                     <div class="info-grid">
                         <div class="info-item">
@@ -103,7 +103,7 @@
                             </div>
                             <div>
                                 <h4>Formação</h4>
-                                <p>4º período - Análise e desenvolvimento de sistemas</p>
+                                <p>Concluído Ensino Superior: Análise e desenvolvimento de sistemas</p>
                             </div>
                         </div>
                         
@@ -130,40 +130,54 @@
                             </div>
 
                             <div class="skill-item">
-                                <i class="devicon-python-plain colored"></i>
-                                <span>Python</span>
-                              </div>
-                              <div class="skill-item">
-                                  <i class="devicon-mysql-plain colored"></i>
-                                  <span>MySQL</span>
-                                </div>
-                                
-                                <div class="skill-item">
-                                    <i class="devicon-postgresql-plain colored"></i>
-                                    <span>SQL</span>
-                                    
-                                </div>
+                              <i class="devicon-typescript-plain colored"></i>
+                              <span>TypeScript</span>
+                            </div>
 
-                                <div class="skill-item">
-                                    <i class="devicon-typescript-plain colored"></i>
-                                    <span>TypeScript</span>
-                                  </div>
-                      
                             <div class="skill-item">
-                              <i class="devicon-ionic-original colored"></i>
-                              <span>Ionic</span>
+                              <i class="devicon-css3-plain colored"></i>
+                              <span>CSS</span>
                             </div>
-                      
+
                             <div class="skill-item">
-                              <i class="devicon-react-original colored"></i>
-                              <span>React</span>
+                              <i class="devicon-python-plain colored"></i>
+                              <span>Python</span>
                             </div>
-                      
+
                             <div class="skill-item">
                               <i class="devicon-php-plain colored"></i>
                               <span>PHP</span>
                             </div>
-                      
+
+                            <div class="skill-item">
+                              <i class="devicon-nodejs-plain colored"></i>
+                              <span>Node.js</span>
+                            </div>
+
+                            <div class="skill-item">
+                              <i class="devicon-angularjs-plain colored"></i>
+                              <span>Angular</span>
+                            </div>
+
+                            <div class="skill-item">
+                              <i class="devicon-react-original colored"></i>
+                              <span>React</span>
+                            </div>
+
+                            <div class="skill-item">
+                              <i class="devicon-ionic-original colored"></i>
+                              <span>Ionic</span>
+                            </div>
+
+                            <div class="skill-item">
+                              <i class="devicon-mysql-plain colored"></i>
+                              <span>MySQL</span>
+                            </div>
+
+                            <div class="skill-item">
+                              <i class="devicon-postgresql-plain colored"></i>
+                              <span>PostgreSQL</span>
+                            </div>
                           </div>
                         </div>
                       </section>
@@ -179,6 +193,7 @@
         <div class="container">
             <h2>Meus Projetos</h2>
             <p class="section-desc">Conheça alguns dos meus trabalhos mais recentes em desenvolvimento mobile, projetos acadêmicos e pessoais.</p>
+            <p class="projects-count" id="projectsCount"></p>
             
             <div class="filters">
                 <div class="category-filters">
@@ -187,14 +202,22 @@
                     <button data-category="academico">Acadêmico</button>
                     <button data-category="web">Web</button>
                 </div>
-                
-                <div class="language-filters">
-                    <p>Filtrar por linguagem:</p>
-                    <div id="languageButtons"></div>
+
+                <div class="filters-compact">
+                    <div class="filter-dropdown">
+                        <button type="button" class="filter-trigger" id="languageDropdownBtn" aria-haspopup="true" aria-expanded="false">Linguagem: Todas</button>
+                        <div id="languageButtons" class="filter-menu hidden"></div>
+                    </div>
+
+                    <div class="filter-dropdown">
+                        <button type="button" class="filter-trigger" id="yearDropdownBtn" aria-haspopup="true" aria-expanded="false">Ano: Todos</button>
+                        <div id="yearButtons" class="filter-menu hidden"></div>
+                    </div>
                 </div>
             </div>
 
             <div class="projects-grid" id="projectsGrid"></div>
+            <div class="projects-pagination" id="projectsPagination" aria-label="Paginação de projetos"></div>
         </div>
     </section>
 
@@ -376,8 +399,10 @@
                     </div>
                 </div>
 
-                <form action="https://formspree.io/f/mrbqwkdg" method="POST" id="contactForm">
-                    <div id="formMessage" style="display:none;"></div>
+                <form action="https://formsubmit.co/rayanneernandez@gmail.com" method="POST" id="contactForm" class="contact-form">
+                    <input type="hidden" name="_subject" value="[PORTFÓLIO] Novo contato">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
 
                     <div class="form-grid">
                       <div class="form-group">
