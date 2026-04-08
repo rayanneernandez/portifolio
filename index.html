@@ -430,6 +430,8 @@
         </div>
     </section>
 
+        <button id="game-toggle" type="button" onclick="toggleGame()" aria-label="Abrir jogo">R</button>
+
         <!-- Botão Flutuante -->
         <div id="chat-toggle" onclick="toggleChat()">
             💬
@@ -442,6 +444,21 @@
             <button onclick="sendMessage()">Enviar</button>
         </div>
 
+        <div id="game-modal" class="game-modal hidden" role="dialog" aria-modal="true" aria-label="Jogo R Runner">
+            <div class="game-modal-content">
+                <div class="game-modal-top">
+                    <div class="game-modal-title">R Runner</div>
+                    <button type="button" id="gameCloseBtn" class="game-close" aria-label="Fechar">✕</button>
+                </div>
+                <div class="game-stats">
+                    <span>Pontos: <span id="gameScore">0</span></span>
+                    <span>Recorde: <span id="gameBest">0</span></span>
+                </div>
+                <canvas id="gameCanvas" width="360" height="200"></canvas>
+                <div class="game-hint">Clique/Toque ou pressione Espaço para pular. R para reiniciar.</div>
+            </div>
+        </div>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -449,6 +466,7 @@
                     <h2>Meu Portfólio</h2>
                     <p>Desenvolvedora apaixonada por criar soluções inovadoras e criativas. Sempre em busca de novos desafios e aprendizados.</p>
                     <p class="copyright">&copy; <span id="currentYear"></span> Todos os direitos reservados.</p>
+                    <p class="visitor-counter">Visitas: <span id="visitorCount">Carregando...</span></p>
                 </div>
                 
                 <div class="footer-nav">

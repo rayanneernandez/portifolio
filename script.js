@@ -633,6 +633,39 @@ function initializeCertifications() {
 // Footer Year
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
+async function updateVisitorCount() {
+    const el = document.getElementById('visitorCount');
+    if (!el) return;
+
+    el.textContent = 'Carregando...';
+
+    const namespace = 'rayanneernandez-portfolio';
+    const key = 'visits';
+    const base = `https://api.countapi.xyz`;
+    const hitUrl = `${base}/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
+    const createUrl = `${base}/create/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}?value=0`;
+
+    try {
+        let res = await fetch(hitUrl);
+
+        if (!res.ok) {
+            await fetch(createUrl);
+            res = await fetch(hitUrl);
+        }
+
+        if (!res.ok) {
+            el.textContent = '0';
+            return;
+        }
+
+        const data = await res.json();
+        const value = typeof data?.value === 'number' ? data.value : null;
+        el.textContent = value === null ? '0' : value.toLocaleString('pt-BR');
+    } catch (_) {
+        el.textContent = '0';
+    }
+}
+
 // Initialize Everything
 document.addEventListener('DOMContentLoaded', () => {
     initializeDarkMode();
@@ -644,6 +677,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCertifications();
     initializeSkillsAutoScroll();
     initializeProjectGallery();
+    updateVisitorCount();
+    initializeRRunner();
     
     // Animate skill bars on scroll
     document.addEventListener("DOMContentLoaded", function () {
@@ -688,10 +723,279 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (message.length > 0) {
       window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-      input.value = ""; // limpa
+      input.value = "";
     } else {
       alert("Por favor, digite uma mensagem.");
     }
+  }
+
+  function toggleGame() {
+    const modal = document.getElementById('game-modal');
+    if (!modal) return;
+
+    if (modal.classList.contains('hidden')) {
+      openGameModal();
+    } else {
+      closeGameModal();
+    }
+  }
+
+  let _rRunner = null;
+
+  function initializeRRunner() {
+    const modal = document.getElementById('game-modal');
+    const canvas = document.getElementById('gameCanvas');
+    const closeBtn = document.getElementById('gameCloseBtn');
+    const scoreEl = document.getElementById('gameScore');
+    const bestEl = document.getElementById('gameBest');
+
+    if (!modal || !canvas || !scoreEl || !bestEl) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const bestKey = 'rRunnerBest';
+    let best = Number(localStorage.getItem(bestKey) || 0);
+    if (!Number.isFinite(best)) best = 0;
+    bestEl.textContent = String(best);
+
+    const state = {
+      running: false,
+      over: false,
+      rafId: 0,
+      lastTs: 0,
+      score: 0,
+      speed: 140,
+      spawnT: 0,
+      spawnEvery: 1.35,
+      groundY: 0,
+      player: { x: 42, y: 0, w: 28, h: 34, vy: 0, grounded: true },
+      obstacles: []
+    };
+
+    function resize() {
+      state.groundY = canvas.height - 28;
+      if (state.player.grounded) state.player.y = state.groundY - state.player.h;
+    }
+
+    function reset() {
+      state.over = false;
+      state.score = 0;
+      state.speed = 140;
+      state.spawnT = 0;
+      state.spawnEvery = 1.35;
+      state.obstacles = [];
+      state.player.vy = 0;
+      state.player.grounded = true;
+      state.player.y = state.groundY - state.player.h;
+      scoreEl.textContent = '0';
+    }
+
+    function jump() {
+      if (state.over) {
+        reset();
+        return;
+      }
+      if (!state.player.grounded) return;
+      state.player.vy = -520;
+      state.player.grounded = false;
+    }
+
+    function spawnObstacle() {
+      const h = 18 + Math.floor(Math.random() * 26);
+      const w = 14 + Math.floor(Math.random() * 18);
+      state.obstacles.push({ x: canvas.width + 10, w, h });
+    }
+
+    function collide(a, b) {
+      return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+    }
+
+    function drawBackground() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--background-alt') || '#111827';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--border') || 'rgba(255,255,255,0.12)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(0, state.groundY);
+      ctx.lineTo(canvas.width, state.groundY);
+      ctx.stroke();
+    }
+
+    function drawPlayer() {
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--primary') || '#3b82f6';
+      ctx.font = '900 32px system-ui, -apple-system, Segoe UI, Roboto, Arial';
+      ctx.textBaseline = 'top';
+      ctx.fillText('R', state.player.x, state.player.y);
+    }
+
+    function drawObstacles() {
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text') || '#ffffff';
+      for (const o of state.obstacles) {
+        const y = state.groundY - o.h;
+        ctx.fillRect(o.x, y, o.w, o.h);
+      }
+    }
+
+    function drawHUD() {
+      ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text-light') || '#94a3b8';
+      ctx.font = '600 12px system-ui, -apple-system, Segoe UI, Roboto, Arial';
+      ctx.textBaseline = 'top';
+      const s = Math.floor(state.score);
+      ctx.fillText(`Pontos: ${s}`, 10, 10);
+      ctx.fillText(`Recorde: ${best}`, 10, 26);
+
+      if (state.over) {
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--text') || '#ffffff';
+        ctx.font = '800 18px system-ui, -apple-system, Segoe UI, Roboto, Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('Fim de jogo', canvas.width / 2, canvas.height / 2 - 18);
+        ctx.font = '600 12px system-ui, -apple-system, Segoe UI, Roboto, Arial';
+        ctx.fillText('Clique/Toque ou R para reiniciar', canvas.width / 2, canvas.height / 2 + 6);
+        ctx.textAlign = 'left';
+      }
+    }
+
+    function update(dt) {
+      const gravity = 1600;
+
+      state.player.vy += gravity * dt;
+      state.player.y += state.player.vy * dt;
+
+      if (state.player.y >= state.groundY - state.player.h) {
+        state.player.y = state.groundY - state.player.h;
+        state.player.vy = 0;
+        state.player.grounded = true;
+      }
+
+      state.spawnT += dt;
+      if (state.spawnT >= state.spawnEvery) {
+        state.spawnT = 0;
+        state.spawnEvery = Math.max(0.75, 1.35 - state.score / 600);
+        spawnObstacle();
+      }
+
+      const speed = state.speed + state.score * 0.6;
+      for (const o of state.obstacles) {
+        o.x -= speed * dt;
+      }
+
+      state.obstacles = state.obstacles.filter(o => o.x + o.w > -10);
+
+      const playerRect = { x: state.player.x + 4, y: state.player.y + 2, w: 22, h: 30 };
+      for (const o of state.obstacles) {
+        const oRect = { x: o.x, y: state.groundY - o.h, w: o.w, h: o.h };
+        if (collide(playerRect, oRect)) {
+          state.over = true;
+          state.running = false;
+          break;
+        }
+      }
+
+      state.score += dt * 22;
+      const s = Math.floor(state.score);
+      scoreEl.textContent = String(s);
+
+      if (s > best) {
+        best = s;
+        bestEl.textContent = String(best);
+        localStorage.setItem(bestKey, String(best));
+      }
+    }
+
+    function frame(ts) {
+      if (!state.rafId) return;
+      if (!state.lastTs) state.lastTs = ts;
+      const dt = Math.min(0.03, (ts - state.lastTs) / 1000);
+      state.lastTs = ts;
+
+      drawBackground();
+
+      if (!state.over && state.running) {
+        update(dt);
+      }
+
+      drawObstacles();
+      drawPlayer();
+      drawHUD();
+
+      state.rafId = requestAnimationFrame(frame);
+    }
+
+    function start() {
+      if (state.rafId) return;
+      resize();
+      reset();
+      state.running = true;
+      state.lastTs = 0;
+      state.rafId = requestAnimationFrame(frame);
+    }
+
+    function stop() {
+      state.running = false;
+      state.over = false;
+      state.lastTs = 0;
+      if (state.rafId) cancelAnimationFrame(state.rafId);
+      state.rafId = 0;
+    }
+
+    function onKey(e) {
+      if (modal.classList.contains('hidden')) return;
+      if (e.key === ' ' || e.code === 'Space') {
+        e.preventDefault();
+        state.running = true;
+        jump();
+      }
+      if (e.key === 'r' || e.key === 'R') {
+        e.preventDefault();
+        state.running = true;
+        reset();
+      }
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeGameModal();
+      }
+    }
+
+    function onPointer() {
+      if (modal.classList.contains('hidden')) return;
+      state.running = true;
+      jump();
+    }
+
+    window.addEventListener('keydown', onKey);
+    canvas.addEventListener('pointerdown', onPointer);
+
+    closeBtn?.addEventListener('click', closeGameModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeGameModal();
+    });
+
+    _rRunner = { start, stop, reset, resize };
+
+    resize();
+    drawBackground();
+    drawObstacles();
+    drawPlayer();
+    drawHUD();
+  }
+
+  function openGameModal() {
+    const modal = document.getElementById('game-modal');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    _rRunner?.resize?.();
+    _rRunner?.start?.();
+  }
+
+  function closeGameModal() {
+    const modal = document.getElementById('game-modal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    _rRunner?.stop?.();
   }
 
   document.addEventListener("DOMContentLoaded", () => {
