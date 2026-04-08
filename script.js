@@ -646,6 +646,19 @@ async function updateVisitorCount() {
     const createCountAPI = `https://api.countapi.xyz/create/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}?value=0`;
     const hitCounterAPI = `https://api.counterapi.dev/v1/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}/up?amount=1`;
 
+    const showBadge = () => {
+        if (document.getElementById('visitorBadge')) return;
+        const img = new Image();
+        img.id = 'visitorBadge';
+        img.src = `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=${encodeURIComponent(location.origin + location.pathname)}&count_bg=%233b82f6&title_bg=%230f172a&icon=&icon_color=%23fff&title=Visitas&edge_flat=false`;
+        img.alt = 'Visitas';
+        img.style.height = '18px';
+        img.style.marginLeft = '6px';
+        img.style.verticalAlign = 'middle';
+        el.textContent = '';
+        el.parentElement.appendChild(img);
+    };
+
     const fetchWithTimeout = (url, ms=2500) => Promise.race([
         fetch(url, { cache: 'no-store' }),
         new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))
@@ -662,12 +675,12 @@ async function updateVisitorCount() {
             const value = typeof data?.value === 'number' ? data.value : null;
             if (value !== null) { el.textContent = value.toLocaleString('pt-BR'); return; }
         }
-        // Fallback
         const fb = await fetchWithTimeout(hitCounterAPI).then(r=>r.ok?r.json():null).catch(()=>null);
         const v = fb && typeof fb.count === 'number' ? fb.count : null;
-        el.textContent = v !== null ? v.toLocaleString('pt-BR') : '0';
+        if (v !== null) { el.textContent = v.toLocaleString('pt-BR'); return; }
+        showBadge();
     } catch (e) {
-        el.textContent = '0';
+        showBadge();
     }
 }
 
@@ -682,7 +695,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCertifications();
     initializeSkillsAutoScroll();
     initializeProjectGallery();
-    updateVisitorCount();
     initializeRRunner();
     
     // Animate skill bars on scroll

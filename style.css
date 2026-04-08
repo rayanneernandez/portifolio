@@ -301,23 +301,26 @@ body {
     height: 200px;
     margin: 0 auto;
     position: relative;
+    box-sizing: content-box;
 }
 
 .profile-image::after {
     content: '';
     position: absolute;
-    top: 0; /* corrigido para alinhar com a imagem */
+    top: 50%;
     left: 50%;
-    width: 200px;
-    height: 200px;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
     border: 4px dashed var(--primary);
     border-radius: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
     animation: spin 8s linear infinite;
 }
 
 @keyframes spin {
-    100% { transform: translateX(-50%) rotate(360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 
@@ -763,6 +766,7 @@ body {
 
 .project-content {
     padding: 1.5rem;
+    text-align: left;
 }
 
 .project-title {
@@ -1107,6 +1111,7 @@ body {
     grid-template-columns: 2fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
+    text-align: left;
 }
 
 .footer-info h2 {
@@ -1153,6 +1158,12 @@ body {
     margin-top: 0.25rem;
     font-size: 0.85rem;
     color: var(--text-light);
+}
+
+.visitor-counter img {
+    height: 18px;
+    vertical-align: text-bottom;
+    margin-left: 0;
 }
 
 .heart {
@@ -1253,6 +1264,7 @@ body {
     grid-template-columns: 2fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
+    text-align: left;
   }
   
   @media (max-width: 768px) {
@@ -1297,7 +1309,7 @@ body {
   }
 
   .footer-contact {
-    text-align: center;
+    text-align: left;
   }
 
   .footer a {
@@ -1313,7 +1325,7 @@ body {
   }
 
   .footer .social-icons {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .footer .social-icons a {
