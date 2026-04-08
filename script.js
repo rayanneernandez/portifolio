@@ -641,27 +641,32 @@ async function updateVisitorCount() {
 
     const namespace = 'rayanneernandez-portfolio';
     const key = 'visits';
-    const base = `https://api.countapi.xyz`;
-    const hitUrl = `${base}/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
-    const createUrl = `${base}/create/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}?value=0`;
+
+    const hitCountAPI = `https://api.countapi.xyz/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`;
+    const createCountAPI = `https://api.countapi.xyz/create/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}?value=0`;
+    const hitCounterAPI = `https://api.counterapi.dev/v1/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}/up?amount=1`;
+
+    const fetchWithTimeout = (url, ms=2500) => Promise.race([
+        fetch(url, { cache: 'no-store' }),
+        new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))
+    ]);
 
     try {
-        let res = await fetch(hitUrl);
-
+        let res = await fetchWithTimeout(hitCountAPI);
         if (!res.ok) {
-            await fetch(createUrl);
-            res = await fetch(hitUrl);
+            await fetchWithTimeout(createCountAPI).catch(()=>{});
+            res = await fetchWithTimeout(hitCountAPI);
         }
-
-        if (!res.ok) {
-            el.textContent = '0';
-            return;
+        if (res.ok) {
+            const data = await res.json();
+            const value = typeof data?.value === 'number' ? data.value : null;
+            if (value !== null) { el.textContent = value.toLocaleString('pt-BR'); return; }
         }
-
-        const data = await res.json();
-        const value = typeof data?.value === 'number' ? data.value : null;
-        el.textContent = value === null ? '0' : value.toLocaleString('pt-BR');
-    } catch (_) {
+        // Fallback
+        const fb = await fetchWithTimeout(hitCounterAPI).then(r=>r.ok?r.json():null).catch(()=>null);
+        const v = fb && typeof fb.count === 'number' ? fb.count : null;
+        el.textContent = v !== null ? v.toLocaleString('pt-BR') : '0';
+    } catch (e) {
         el.textContent = '0';
     }
 }
